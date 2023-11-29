@@ -1,17 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import MedicineContext from "./medicine-context";
 
 const MedicineProvider = (props) => {
 
-    // const medicinecontext = {
-    //     stock: props.stock,
-        
-    // }
+    const [stock, setStock] = useState([])
+    const addStockHandler = (newStock) => {
+        setStock([...stock, newStock])
+    }
+    
+
+    const medicineContext = {
+        stock: stock,
+        addStock: addStockHandler
+    }
 
     return (
-        <div>
+        <MedicineContext.Provider value={medicineContext}>
             {props.children}
-        </div>
+        </MedicineContext.Provider>
     );
 
 }
