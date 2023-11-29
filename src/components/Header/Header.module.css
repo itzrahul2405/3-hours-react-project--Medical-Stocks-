@@ -1,0 +1,28 @@
+/* Styles for the container div */
+.container {
+    background-color: #bd6363;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Styles for the h2 element */
+.container h2 {
+    color: Blue;
+}
+
+
+.cartBtn {
+    background-color: rgb(200, 180, 70);
+    width: 300px;
+    height: 50px;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.cartBtn:hover {
+    background-color: rgb(136, 130, 95);
+}
