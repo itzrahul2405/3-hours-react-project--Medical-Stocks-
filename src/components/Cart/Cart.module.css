@@ -1,0 +1,63 @@
+
+.total {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .total ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .total ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .liContent h2 {
+    margin: 0;
+    color: #333;
+  }
+  
+  
+  .liContent h4 {
+    margin: 0;
+    color: #777;
+  }
+  
+  .liContent button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .liContent button:hover {
+    background-color: #0056b3;
+  }
+  
+  .liBtns button{
+    background-color: rgb(42, 189, 71);
+  }
+
+  .liBtns button:hover{
+    background-color: rgb(74, 111, 82);
+  }
+  
+  .CartBtn button{
+    background-color: rgb(67, 18, 18);
+  }
+
+  .CartBtn button:hover{
+    background-color: rgb(113, 75, 75);
+  }
+  

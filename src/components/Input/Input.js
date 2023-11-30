@@ -8,8 +8,8 @@ const Input = () => {
 
   const [medicineName, setMedicineName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
 
   
 
@@ -33,6 +33,7 @@ const Input = () => {
     event.preventDefault();
 
     const newStock = {
+      id: new Date().getTime(),
       name: medicineName,
       description: description,
       price: price,
