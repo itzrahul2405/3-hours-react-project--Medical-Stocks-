@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MedicineContext from "./medicine-context";
 
 const MedicineProvider = (props) => {
@@ -7,10 +7,40 @@ const MedicineProvider = (props) => {
   const [totalAmount, setTotalAmount] = useState(0);
 
 
-  const addStockHandler = (newStock) => {
-    setStock([...stock, newStock]);
+  const addStockHandler = async (newStock) => {
+    try {
+      const response = await fetch('https://crudcrud.com/api/0155889c784e4a80a1ed5d2b3118d7d1/medstock', {
+        method: "POST",
+        body: JSON.stringify(newStock),
+        headers: { "Content-Type": "application/json" },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to add stock");
+      }
+      const data = await response.json();
+      console.log(data);
+    } 
+    catch(error){
+      console.log("Error adding stock:", error.message);
+    }
+    
   };
 
+  const getData = async() => {
+    const response = await fetch('https://crudcrud.com/api/0155889c784e4a80a1ed5d2b3118d7d1/medstock');
+    const data = await response.json();
+    
+    console.log('this is get data', data)
+    data.map(d => (
+      setStock([...stock, {name: d.name, description: d.description, price: d.price, quantity: d.quantity}])
+    ))
+
+    // getData()
+  }
+
+  useEffect(() => {
+    getData()
+  },[])
 
 
   const addToCartHandler = (itemId) => {

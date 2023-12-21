@@ -33,7 +33,7 @@ const Input = () => {
     event.preventDefault();
 
     const newStock = {
-      id: new Date().getTime(),
+      // id: new Date().getTime(),
       name: medicineName,
       description: description,
       price: price,
